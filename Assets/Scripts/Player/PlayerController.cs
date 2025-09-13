@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
 	public int defaultJumps = 2;
 	public int jumps;
 
+	// dash stuff
+ 	public float dashTime;
+	public float dashSpeed
+
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
@@ -47,7 +51,7 @@ public class PlayerController : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
- if (characterController.isGrounded)
+ 	if (characterController.isGrounded)
     {
         jumps = defaultJumps; // Reset jumps when grounded
     }
@@ -84,7 +88,26 @@ public class PlayerController : MonoBehaviour
 	{
 		Shoot();
 	}
+
+
+	if (Input.GetMouseButtonDown(0))
+	{
+ 		StartCoroutine(dash());
+   		
+ 	}
     }
+	
+ 	IEnumerator Dash()
+  	{
+		float startTime = Time.time;
+
+		while(Time.time < startTime + dashTime)
+  		{
+			move.Script.controller.Move(movescript.moveDir * dashSpeed * Time.deltaTime);
+
+	  		yield return null;
+   		}
+   	}
 
 	void Shoot()
 	{

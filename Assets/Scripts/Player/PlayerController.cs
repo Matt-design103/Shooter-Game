@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
 		while(Time.time < startTime + dashTime)
   		{
-			move.Script.controller.Move(movescript.moveDir * dashSpeed * Time.deltaTime);
+			transform.Translate(Vector3.forward * dashSpeed);
 
 	  		yield return null;
    		}

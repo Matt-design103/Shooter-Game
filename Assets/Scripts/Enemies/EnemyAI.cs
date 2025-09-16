@@ -1,6 +1,4 @@
 using UnityEngine;
-
-using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
@@ -28,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     // Components
     private NavMeshAgent agent;
     private Transform player;
-    private Animator animator;
+    //private Animator animator;
     
     // State Management
     public enum AIState { Patrol, Combat }
@@ -47,7 +45,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+       // animator = GetComponent<Animator>();
         
         // Find player
         GameObject playerGO = GameObject.FindWithTag("Player");
@@ -83,7 +81,7 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case AIState.Patrol:
-                HandlePatrolState();
+                //HandlePatrolState();
                 break;
                 
             case AIState.Combat:
@@ -92,31 +90,10 @@ public class EnemyAI : MonoBehaviour
         }
         
         // Update animator parameters
-        UpdateAnimator();
+      //  UpdateAnimator();
     }
     
-    void HandlePatrolState()
-    {
-        // Simple patrol logic
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        {
-            if (!waitingAtPatrol)
-            {
-                waitingAtPatrol = true;
-                patrolWaitTimer = waitTimeAtPoint;
-            }
-            else
-            {
-                patrolWaitTimer -= Time.deltaTime;
-                if (patrolWaitTimer <= 0f)
-                {
-                    NextPatrolPoint();
-                    waitingAtPatrol = false;
-                }
-            }
-        }
-    }
-    
+   
     void HandleCombatState()
     {
         // Always know where player is now
@@ -276,7 +253,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
     
-    void UpdateAnimator()
+  /*  void UpdateAnimator()
     {
         if (animator == null) return;
         
@@ -284,8 +261,8 @@ public class EnemyAI : MonoBehaviour
         float speed = agent.velocity.magnitude;
         animator.SetFloat("Speed", speed);
         
-        // Update state parameters
-        animator.SetBool("IsPatrolling", currentState == AIState.Patrol);
+         Update state parameters
+       animator.SetBool("IsPatrolling", currentState == AIState.Patrol);
         animator.SetBool("IsInCombat", currentState == AIState.Combat);
         
         // Trigger attack animation
@@ -293,7 +270,7 @@ public class EnemyAI : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
-    }
+    } */
     
    
 }

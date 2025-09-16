@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
 	public int jumps;
 
 	// dash stuff
- 	public float dashTime;
-	public float dashSpeed
+ 	public float dashTime = 0.1f;
+    public float dashSpeed = 10;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -84,15 +84,12 @@ public class PlayerController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
 
-	if (Input.GetButtonDown("Fire1"))
-	{
-		Shoot();
-	}
 
 
-	if (Input.GetMouseButtonDown(0))
+
+	if (Input.GetKeyDown(KeyCode.G))
 	{
- 		StartCoroutine(dash());
+ 		StartCoroutine(Dash());
    		
  	}
     }
@@ -103,18 +100,10 @@ public class PlayerController : MonoBehaviour
 
 		while(Time.time < startTime + dashTime)
   		{
-			transform.Translate(Vector3.forward * dashSpeed);
+			transform.Translate(moveDirection.x * dashSpeed, 0, moveDirection.z * dashSpeed);
 
 	  		yield return null;
    		}
    	}
 
-	void Shoot()
-	{
-		RaycastHit hit;
-		if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range));
-        {
-            
-        }
-	}
 }

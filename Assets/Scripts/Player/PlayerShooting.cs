@@ -10,5 +10,10 @@ public class PlayerShooting : MonoBehaviour
         {
             weaponManagement.CurrentWeapon.Fire();
         }
+
+        if (Input.GetButton("Fire1") && weaponManagement.CurrentWeapon != null)
+        {
+
+        }
     }
 }

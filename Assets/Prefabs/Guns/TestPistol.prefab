@@ -138,4 +138,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bulletSpawnPos: {fileID: 0}
   nextFireTime: 0
-  range: 10000
+  range: 1500

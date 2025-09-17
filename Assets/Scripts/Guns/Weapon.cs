@@ -4,6 +4,12 @@ public enum FireMode
     Hitscan,
     Projectile
 }
+
+public enum FiringStyle
+{
+    SingleShot,
+    Automatic
+}
 public abstract class Weapon : MonoBehaviour
 {
     public string weaponName;

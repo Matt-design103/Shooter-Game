@@ -8,7 +8,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 9.0f;
     public Camera playerCamera;
@@ -47,9 +46,8 @@ public class PlayerController : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = canMove ? (walkingSpeed) * Input.GetAxis("Vertical") : 0;
+        float curSpeedY = canMove ? (walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
@@ -89,8 +87,9 @@ public class PlayerController : MonoBehaviour
 
 
 
-	if (Input.GetKeyDown(KeyCode.G))
+	if (Input.GetKeyDown(KeyCode.LeftShift))
 	{
+            Debug.Log("dash");
  		StartCoroutine(Dash());
    		
  	}
@@ -99,13 +98,18 @@ public class PlayerController : MonoBehaviour
  	IEnumerator Dash()
   	{
 		float startTime = Time.time;
+        Vector3 dashDirection = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
 
-		while(Time.time < startTime + dashTime)
-  		{
-			transform.Translate(moveDirection.x * dashSpeed, 0, moveDirection.z * dashSpeed);
-
-	  		yield return null;
-   		}
+		  if (dashDirection.magnitude == 0)
+        {
+            dashDirection = transform.forward;
+        }
+    
+        while(Time.time < startTime + dashTime)
+        {
+            characterController.Move(dashDirection * dashSpeed * Time.deltaTime);
+            yield return null;
+        }
    	}
 
 }

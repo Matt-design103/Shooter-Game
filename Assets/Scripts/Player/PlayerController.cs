@@ -22,13 +22,9 @@ public class PlayerController : MonoBehaviour
 	public int jumps;
 
 	// dash stuff
-<<<<<<< HEAD
  	public float dashTime;
     public float dashSpeed;
-=======
- 	public float dashTime = 0.1f;
-    public float dashSpeed = 10;
->>>>>>> 2dea0375b3d3e1d41f4f840f1432ef4cd0ccd5e0
+
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;

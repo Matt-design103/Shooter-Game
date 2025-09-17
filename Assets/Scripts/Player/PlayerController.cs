@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
 	// dash stuff
  	public float dashTime;
-	public float dashSpeed
+    public float dashSpeed;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;

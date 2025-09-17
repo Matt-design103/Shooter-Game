@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
-	
-	public float damage = 10f;
+
+    public GameObject parryHitboxPrefab;
+    public Transform parrySpawnPoint;
+
+    public float damage = 10f;
 	public float range = 100f;
 	public float health = 100f;
 	public int defaultJumps = 2;
@@ -23,6 +26,10 @@ public class PlayerController : MonoBehaviour
 	// dash stuff
  	public float dashTime;
     public float dashSpeed;
+
+    // parry stuff
+    public bool canParry;
+    public float parryPrevent = 0.5f;
 
 
     CharacterController characterController;
@@ -39,6 +46,7 @@ public class PlayerController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        canParry = true;
     }
 
     void Update()
@@ -65,8 +73,17 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection.y = movementDirectionY;
     }
-
-    // Gravity
+    //parry input
+    if (Input.GetMouseButtonDown(1) && canParry == true)
+    {
+            Debug.Log("Parry Enabled");
+            Instantiate(parryHitboxPrefab, parrySpawnPoint.position, parrySpawnPoint.rotation);
+        
+            //canParry = false;
+            //ParryCoolDown();
+            // You can add parry animation or effects here
+        }
+        // Gravity
     if (!characterController.isGrounded)
     {
         moveDirection.y -= gravity * Time.deltaTime;
@@ -111,5 +128,22 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
    	}
+
+    void ParryCoolDown()
+    {
+        //spam prevention
+        float timer = parryPrevent;
+        float elapsed = 0f;
+        if (timer > 0f)
+        {
+            elapsed += Time.deltaTime;
+            if (elapsed >= timer)
+            {
+                canParry = true;
+                Debug.Log("Parry ReEnabled");
+
+            }
+        }
+    }
 
 }

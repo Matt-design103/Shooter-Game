@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [Header("Detection")]
-    public float detectionRange = 10f;
+    public float activationRange = 12f;
     public float fieldOfViewAngle = 60f;
     public LayerMask obstacleLayer = 1;
     
@@ -14,14 +14,7 @@ public class EnemyAI : MonoBehaviour
     public Transform firePoint;
     public GameObject projectilePrefab;
     public float projectileSpeed = 20f;
-    
-    [Header("Patrol")]
-    public Transform[] patrolPoints;
-    public float waitTimeAtPoint = 2f;
-    public float patrolSpeed = 2f;
     public float combatSpeed = 4f;
-    
-
     
     // Components
     private NavMeshAgent agent;
@@ -29,23 +22,17 @@ public class EnemyAI : MonoBehaviour
     //private Animator animator;
     
     // State Management
-    public enum AIState { Patrol, Combat }
+    public enum AIState { Inactive, Combat }
     public AIState currentState;
-    
-    // Patrol Variables
-    private int currentPatrolIndex = 0;
-    private float patrolWaitTimer = 0f;
-    private bool waitingAtPatrol = false;
     
     // Combat Variables
     private float lastAttackTime = 0f;
-    private bool playerDetected = false;
     private bool hasLineOfSight = false;
     
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-       // animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         
         // Find player
         GameObject playerGO = GameObject.FindWithTag("Player");
@@ -53,50 +40,35 @@ public class EnemyAI : MonoBehaviour
             player = playerGO.transform;
         
         // Initialize state
-        currentState = AIState.Patrol;
-        agent.speed = patrolSpeed;
-        
-        // Start first patrol
-        if (patrolPoints.Length > 0)
-        {
-            agent.SetDestination(patrolPoints[0].position);
-        }
+        currentState = AIState.Inactive;
+        agent.speed = 0f; // Don't move when inactive
     }
     
     void Update()
     {
         if (player == null) return;
         
-        // Check for initial player detection (only if not already detected)
-        if (!playerDetected)
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        
+        // Check for activation
+        if (currentState == AIState.Inactive)
         {
-            playerDetected = CanSeePlayer();
-            if (playerDetected)
+            if (distanceToPlayer <= activationRange && CanSeePlayer())
             {
-                ChangeState(AIState.Combat);
+                ActivateEnemy();
             }
         }
-        
-        // State machine
-        switch (currentState)
+        else if (currentState == AIState.Combat)
         {
-            case AIState.Patrol:
-                //HandlePatrolState();
-                break;
-                
-            case AIState.Combat:
-                HandleCombatState();
-                break;
+            HandleCombatState();
         }
         
         // Update animator parameters
-      //  UpdateAnimator();
+        //UpdateAnimator();
     }
     
-   
     void HandleCombatState()
     {
-        // Always know where player is now
         hasLineOfSight = HasLineOfSight(player.position);
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         
@@ -127,9 +99,6 @@ public class EnemyAI : MonoBehaviour
     bool CanSeePlayer()
     {
         if (player == null) return false;
-        
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer > detectionRange) return false;
         
         // Check field of view
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
@@ -229,31 +198,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
     
-    void NextPatrolPoint()
+    void ActivateEnemy()
     {
-        if (patrolPoints.Length == 0) return;
-        
-        currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
-        agent.SetDestination(patrolPoints[currentPatrolIndex].position);
+        currentState = AIState.Combat;
+        agent.speed = combatSpeed;
+        Debug.Log("Enemy activated - engaging player!");
     }
     
-    void ChangeState(AIState newState)
-    {
-        if (currentState == newState) return;
-        
-        currentState = newState;
-        
-        // State entry logic
-        switch (newState)
-        {
-            case AIState.Combat:
-                agent.speed = combatSpeed;
-                Debug.Log("Enemy detected player - entering combat mode!");
-                break;
-        }
-    }
-    
-  /*  void UpdateAnimator()
+    /*void UpdateAnimator()
     {
         if (animator == null) return;
         
@@ -261,8 +213,8 @@ public class EnemyAI : MonoBehaviour
         float speed = agent.velocity.magnitude;
         animator.SetFloat("Speed", speed);
         
-         Update state parameters
-       animator.SetBool("IsPatrolling", currentState == AIState.Patrol);
+        // Update state parameters
+        animator.SetBool("IsInactive", currentState == AIState.Inactive);
         animator.SetBool("IsInCombat", currentState == AIState.Combat);
         
         // Trigger attack animation
@@ -270,7 +222,5 @@ public class EnemyAI : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
-    } */
-    
-   
+    }*/
 }

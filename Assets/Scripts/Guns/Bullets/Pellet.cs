@@ -14,6 +14,7 @@ public class Pellet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("hit" + collision.collider.name);
         EnemyHealth enemy = collision.collider.GetComponent<EnemyHealth>();
         if (enemy != null)
         {

@@ -225,8 +225,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1940444847}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &283847043
@@ -932,8 +931,8 @@ MonoBehaviour:
   playerCamera: {fileID: 330585545}
   lookSpeed: 2
   lookXLimit: 45
-  parryHitboxPrefab: {fileID: 0}
-  parrySpawnPoint: {fileID: 1227645950}
+  parryHitboxPrefab: {fileID: 4099020113873452690, guid: fd866d64ae689aa4db0c6ee876544617, type: 3}
+  parrySpawnPoint: {fileID: 809381192}
   damage: 10
   range: 100
   health: 100

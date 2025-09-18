@@ -18,13 +18,13 @@ public class PlayerController : MonoBehaviour
     public Transform parrySpawnPoint;
 
     public float damage = 10f;
-	public float range = 100f;
-	public float health = 100f;
-	public int defaultJumps = 2;
-	public int jumps;
+    public float range = 100f;
+    public float health = 100f;
+    public int defaultJumps = 2;
+    public int jumps;
 
-	// dash stuff
- 	public float dashTime;
+    // dash stuff
+    public float dashTime;
     public float dashSpeed;
 
     // parry stuff
@@ -59,35 +59,35 @@ public class PlayerController : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
- 	if (characterController.isGrounded)
-    {
-        jumps = defaultJumps; // Reset jumps when grounded
-    }
+        if (characterController.isGrounded)
+        {
+            jumps = defaultJumps; // Reset jumps when grounded
+        }
 
-    if (Input.GetButtonDown("Jump") && canMove && jumps > 0)
-    {
-        moveDirection.y = jumpSpeed;
-        jumps--; // Consume a jump
-    }
-    else
-    {
-        moveDirection.y = movementDirectionY;
-    }
-    //parry input
-    if (Input.GetMouseButtonDown(1) && canParry == true)
-    {
-            Debug.Log("Parry Enabled");
+        if (Input.GetButtonDown("Jump") && canMove && jumps > 0)
+        {
+            moveDirection.y = jumpSpeed;
+            jumps--; // Consume a jump
+        }
+        else
+        {
+            moveDirection.y = movementDirectionY;
+        }
+        //parry input
+        if (Input.GetMouseButtonDown(1) && canParry == true)
+        {
+
             Instantiate(parryHitboxPrefab, parrySpawnPoint.position, parrySpawnPoint.rotation);
-        
-            //canParry = false;
-            //ParryCoolDown();
+            Debug.Log("Parry Enabled");
+            canParry = false;
+            StartCoroutine(ParryCoolDown());
             // You can add parry animation or effects here
         }
         // Gravity
-    if (!characterController.isGrounded)
-    {
-        moveDirection.y -= gravity * Time.deltaTime;
-    }
+        if (!characterController.isGrounded)
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
 
 
         characterController.Move(moveDirection * Time.deltaTime);
@@ -104,46 +104,40 @@ public class PlayerController : MonoBehaviour
 
 
 
-	if (Input.GetKeyDown(KeyCode.LeftShift))
-	{
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
             Debug.Log("dash");
- 		StartCoroutine(Dash());
-   		
- 	}
+            StartCoroutine(Dash());
+
+        }
     }
-	
- 	IEnumerator Dash()
-  	{
-		float startTime = Time.time;
+
+    IEnumerator Dash()
+    {
+        float startTime = Time.time;
         Vector3 dashDirection = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
 
-		  if (dashDirection.magnitude == 0)
+        if (dashDirection.magnitude == 0)
         {
             dashDirection = transform.forward;
         }
-    
-        while(Time.time < startTime + dashTime)
+
+        while (Time.time < startTime + dashTime)
         {
             characterController.Move(dashDirection * dashSpeed * Time.deltaTime);
             yield return null;
         }
-   	}
+    }
 
-    void ParryCoolDown()
+    //spam prevention.
+    IEnumerator ParryCoolDown()
     {
-        //spam prevention
-        float timer = parryPrevent;
-        float elapsed = 0f;
-        if (timer > 0f)
-        {
-            elapsed += Time.deltaTime;
-            if (elapsed >= timer)
-            {
-                canParry = true;
-                Debug.Log("Parry ReEnabled");
-
-            }
-        }
+        yield return new WaitForSeconds(parryPrevent);
+        canParry = true;
+        Debug.Log("Parry ReEnabled");
     }
 
 }
+
+
+

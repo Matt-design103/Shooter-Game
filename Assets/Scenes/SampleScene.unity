@@ -932,6 +932,8 @@ MonoBehaviour:
   playerCamera: {fileID: 330585545}
   lookSpeed: 2
   lookXLimit: 45
+  parryHitboxPrefab: {fileID: 0}
+  parrySpawnPoint: {fileID: 1227645950}
   damage: 10
   range: 100
   health: 100
@@ -939,6 +941,8 @@ MonoBehaviour:
   jumps: 0
   dashTime: 0.1
   dashSpeed: 50
+  canParry: 0
+  parryPrevent: 0.5
   canMove: 1
 --- !u!114 &809381195
 MonoBehaviour:

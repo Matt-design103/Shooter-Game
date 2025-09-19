@@ -932,7 +932,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   parryHitboxPrefab: {fileID: 4099020113873452690, guid: fd866d64ae689aa4db0c6ee876544617, type: 3}
-  parrySpawnPoint: {fileID: 809381192}
+  parrySpawnPoint: {fileID: 1227645950}
   damage: 10
   range: 100
   health: 100

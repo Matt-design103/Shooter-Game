@@ -5,11 +5,13 @@ using UnityEngine;
 public class ParryHItbox_Lmao : MonoBehaviour
 {
     public float parryDuration = 0.5f;
+    public GameObject player; // Reference to the player object
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(DestroyAfterTime(parryDuration));
+        player = GameObject.FindWithTag("Player");
 
     }
 
@@ -24,6 +26,11 @@ public class ParryHItbox_Lmao : MonoBehaviour
         if (other.CompareTag("EnemyAttack"))
         {
             Debug.Log("Parried an attack!");
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.ParryPogo(); // Call the ParryPogo method on the player
+            }
             Destroy(other.gameObject); // Destroy the enemy attack object
         }
     }

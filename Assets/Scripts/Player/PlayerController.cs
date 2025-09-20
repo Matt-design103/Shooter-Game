@@ -26,10 +26,14 @@ public class PlayerController : MonoBehaviour
     // dash stuff
     public float dashTime;
     public float dashSpeed;
+    public float dashCooldown;
+    public bool canDash;
+    public bool dashRestored;
 
     // parry stuff
     public bool canParry;
     public float parryPrevent = 0.5f;
+    public float parryBounceVelocity;
 
 
     CharacterController characterController;
@@ -47,6 +51,8 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         canParry = true;
+        canDash = true;
+        dashRestored = true;
     }
 
     void Update()
@@ -62,6 +68,11 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded)
         {
             jumps = defaultJumps; // Reset jumps when grounded
+            if (dashRestored == true)
+            {
+                canDash = true;
+                Debug.Log("Dash actually restored");
+            }
         }
 
         if (Input.GetButtonDown("Jump") && canMove && jumps > 0)
@@ -74,7 +85,7 @@ public class PlayerController : MonoBehaviour
             moveDirection.y = movementDirectionY;
         }
         //parry input
-        if (Input.GetMouseButtonDown(1) && canParry == true)
+        if (Input.GetKeyDown(KeyCode.C) && canParry == true)
         {
 
             Instantiate(parryHitboxPrefab, parrySpawnPoint.position, parrySpawnPoint.rotation);
@@ -104,10 +115,12 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
-            Debug.Log("dash");
+            
             StartCoroutine(Dash());
+            canDash = false;
+            StartCoroutine(DashCoolDown());
 
         }
     }
@@ -135,6 +148,20 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(parryPrevent);
         canParry = true;
         Debug.Log("Parry ReEnabled");
+    }
+
+    IEnumerator DashCoolDown()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        Debug.Log("Dash ReEnabled");
+        dashRestored = true;
+    }
+
+    public void ParryPogo()
+    {
+        moveDirection.y += parryBounceVelocity;
+        characterController.Move(moveDirection * Time.deltaTime);
+        jumps = defaultJumps; // Reset jumps when parrying
     }
 
 }

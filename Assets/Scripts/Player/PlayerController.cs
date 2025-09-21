@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     public float dashCooldown;
     public bool canDash;
-    public bool dashRestored;
 
     // parry stuff
     public bool canParry;
@@ -52,7 +51,7 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         canParry = true;
         canDash = true;
-        dashRestored = true;
+        jumps = defaultJumps;
     }
 
     void Update()
@@ -68,11 +67,7 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded)
         {
             jumps = defaultJumps; // Reset jumps when grounded
-            if (dashRestored == true)
-            {
-                canDash = true;
-                Debug.Log("Dash actually restored");
-            }
+     
         }
 
         if (Input.GetButtonDown("Jump") && canMove && jumps > 0)
@@ -154,7 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(dashCooldown);
         Debug.Log("Dash ReEnabled");
-        dashRestored = true;
+        canDash = true;
     }
 
     public void ParryPogo()

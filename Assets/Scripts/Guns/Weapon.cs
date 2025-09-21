@@ -12,6 +12,8 @@ public abstract class Weapon : MonoBehaviour
     public float damage;
     public GameObject bulletPrefab;
     public Transform bulletSpawnPos;
+    public Transform muzzleFlashSpawnPos;
+    public ParticleSystem muzzleFlash;
 
 
     public float nextFireTime;

@@ -28,7 +28,7 @@ public class Pistol : Weapon
         
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range))
         {
-            
+            Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, Quaternion.identity);
             Debug.Log("hit" + hit.collider.name);
             GameObject target = hit.collider.gameObject;
             EnemyHealth enemy = target.GetComponent<EnemyHealth>();

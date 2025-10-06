@@ -21,19 +21,7 @@ public class ParryHItbox_Lmao : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("EnemyAttack"))
-        {
-            Debug.Log("Parried an attack!");
-            PlayerController playerController = player.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                playerController.ParryPogo(); // Call the ParryPogo method on the player
-            }
-            Destroy(other.gameObject); // Destroy the enemy attack object
-        }
-    }
+   
 
     IEnumerator DestroyAfterTime(float delay)
     {

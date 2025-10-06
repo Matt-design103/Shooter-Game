@@ -6,11 +6,12 @@ TagManager:
   tags:
   - PlayerProjectile
   - EnemyAttack
+  - Parry
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Player

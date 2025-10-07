@@ -149,7 +149,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  enemyBullet: {fileID: 4747264108239287452, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
+  enemyBullet: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
   bulletSpawnPos: {fileID: 169312921853715560}
   timeBetweenAttacks: 1
   activationRange: 15

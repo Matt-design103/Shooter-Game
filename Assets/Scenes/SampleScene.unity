@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Extremely Evil Ass Capsule (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6084872483087528825, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1192,6 +1196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Extremely Evil Ass Capsule
       objectReference: {fileID: 0}
+    - target: {fileID: 6084872483087528825, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

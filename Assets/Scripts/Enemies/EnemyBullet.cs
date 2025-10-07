@@ -19,9 +19,17 @@ public class EnemyBullet : MonoBehaviour
              transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void OnTrigger(Collider other)
+    void OnCollisionEnter (Collision other)
     {
-        Destroy(gameObject);
+        if(other.gameObject.CompareTag("Player"))
+        {
+            //damage player
+            Destroy(gameObject);
+        }
+        else if(other.gameObject.CompareTag("Parry"))
+        {
+            transform.Rotate(0, 180, 0);
+        }
     }
 
 }

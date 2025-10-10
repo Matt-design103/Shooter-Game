@@ -16,20 +16,29 @@ public class EnemyBullet : MonoBehaviour
     private void Update()
     {
         // Move forward constantly
-             transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void OnCollisionEnter (Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            //damage player
-            Destroy(gameObject);
+             PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if(player == null)
+        {
+            // Try to find it in parent objects
+            player = other.gameObject.GetComponentInParent<PlayerController>();
+        }
+        
+        if(player != null)
+        {
+            player.TakeDamage(damage);
+        }
+        Destroy(gameObject);
         }
         else if(other.gameObject.CompareTag("Parry"))
         {
             transform.Rotate(0, 180, 0);
         }
     }
-
 }

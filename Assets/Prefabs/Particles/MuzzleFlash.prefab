@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 338130646284437378}
   - component: {fileID: 3429829653987780078}
   - component: {fileID: 8742885535072717354}
+  - component: {fileID: -131315505193441279}
   m_Layer: 0
   m_Name: MuzzleFlash
   m_TagString: Untagged
@@ -42,7 +43,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3031201937053735501}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -224,7 +225,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.92998445, g: 1, b: 0.41823888, a: 1}
+      maxColor: {r: 0.41960788, g: 1, b: 0.96946615, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4892,6 +4893,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-131315505193441279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031201937053735501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a554df215e7ec8d418dc8bd9c5039202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.2
 --- !u!1 &6679264842195765190
 GameObject:
   m_ObjectHideFlags: 0

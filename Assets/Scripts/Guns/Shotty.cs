@@ -27,6 +27,7 @@ public class Shotty : Weapon
 
     public override void Fire()
     {
+         Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, Quaternion.identity);
        for (int i = 0; i < pellets; i++)
         {
             float spreadX = RandomGaussian(0f, spreadRange * 0.3f);

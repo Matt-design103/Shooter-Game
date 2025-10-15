@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
     public float parryPrevent = 0.5f;
     public float parryBounceVelocity;
 
+    //grapple visuals
+    public GrappleRope grappleRope;
+    public Transform grappleRopeStartPoint;
+
     //state stuff
     public enum PlayerState
     {
@@ -114,6 +118,12 @@ public class PlayerController : MonoBehaviour
         state = PlayerState.Grappling;
         isGrappling = true;
         canMove = false;
+
+             if (grappleRope != null)
+        {
+            Transform startPoint = grappleRopeStartPoint != null ? grappleRopeStartPoint : playerCamera.transform;
+            grappleRope.StartGrapple(startPoint, grappleTarget);
+        }
     }
 
     private void HandleMovement()
@@ -210,13 +220,18 @@ public class PlayerController : MonoBehaviour
 }
 
     public void EndGrapple()
-{
-    state = PlayerState.Normal;
-    isGrappling = false;
-    // Give the player some momentum when exiting grapple
-    Vector3 direction = (grappleTarget - transform.position).normalized;
-    moveDirection = direction * (grappleSpeed * 0.5f);
-    canMove = true;
+    {
+        state = PlayerState.Normal;
+        isGrappling = false;
+        // Give the player some momentum when exiting grapple
+        Vector3 direction = (grappleTarget - transform.position).normalized;
+        moveDirection = direction * (grappleSpeed * 0.5f);
+        canMove = true;
+    
+       if (grappleRope != null)
+    {
+        grappleRope.EndGrapple();
+    }
 }
 
     //damage and death logic

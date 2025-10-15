@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &17578117
+--- !u!1001 &101467307
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,15 +129,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.77195
+      value: -4.6383095
       objectReference: {fileID: 0}
     - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.888
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.348835
+      value: 5.375641
       objectReference: {fileID: 0}
     - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
       propertyPath: m_LocalRotation.w
@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Extremely Evil Ass Capsule (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6084872483087528825, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -699,6 +695,137 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1001 &446742132
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.737212
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.59347
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637837379855723454, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+      propertyPath: m_Name
+      value: Extremely Evil Ass Capsule
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
+--- !u!1 &461856786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461856787}
+  - component: {fileID: 461856788}
+  m_Layer: 6
+  m_Name: GrappleRope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461856787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461856786}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 809381192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461856788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461856786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6f23c08bddc534f98aae66ed4db2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
+  segmentCount: 20
+  ropeWidth: 0.1
+  ropeMaterial: {fileID: 2100000, guid: f27af0e174f63cc4b969255b0c3dfb3f, type: 2}
+  waveSpeed: 2
+  waveHeight: 0.3
+  waveIntensity:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &525981399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1243,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
+  - {fileID: 461856787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &809381193
@@ -1238,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 7.5
   jumpSpeed: 8
-  grappleSpeed: 10
+  grappleSpeed: 20
   gravity: 20
   defaultJumps: 2
   jumps: 0
@@ -1258,6 +1386,8 @@ MonoBehaviour:
   canParry: 1
   parryPrevent: 0.5
   parryBounceVelocity: 0
+  grappleRope: {fileID: 461856788}
+  grappleRopeStartPoint: {fileID: 1227645950}
   state: 0
   canMove: 1
 --- !u!114 &809381195
@@ -1363,67 +1493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &855530821
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.0870237
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.004
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.2074785
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3637837379855723454, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_Name
-      value: Extremely Evil Ass Capsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084872483087528825, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
 --- !u!1001 &944702353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1929,8 +1998,8 @@ SceneRoots:
   - {fileID: 388352195}
   - {fileID: 944702353}
   - {fileID: 283847043}
-  - {fileID: 855530821}
-  - {fileID: 17578117}
   - {fileID: 525981403}
   - {fileID: 648619397}
   - {fileID: 2119601531}
+  - {fileID: 446742132}
+  - {fileID: 101467307}

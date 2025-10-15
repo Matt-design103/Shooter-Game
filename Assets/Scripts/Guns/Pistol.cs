@@ -23,9 +23,11 @@ public class Pistol : Weapon
 
     public override void Fire()
     {
-        
+        currentHeat = currentHeat + heatPerShot;
+        Debug.Log("Yo bro so hot " + currentHeat);
         RaycastHit hit;
         
+
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range))
         {
             Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);

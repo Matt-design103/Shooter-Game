@@ -119,67 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &17578117
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.77195
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.888
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.348835
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3637837379855723454, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_Name
-      value: Extremely Evil Ass Capsule (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084872483087528825, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
 --- !u!1 &283373280
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b46fbbdc44a12ee48b13fb2e597fbc74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1363,67 +1302,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &855530821
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.0870237
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.004
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.2074785
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 169312921853715560, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3637837379855723454, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: m_Name
-      value: Extremely Evil Ass Capsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084872483087528825, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 410664298307978519, guid: a3065bcf26dc7de409066c60fae48f78, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 91477b59b1690184e8e783acc0cc6027, type: 3}
 --- !u!1001 &944702353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1929,8 +1807,6 @@ SceneRoots:
   - {fileID: 388352195}
   - {fileID: 944702353}
   - {fileID: 283847043}
-  - {fileID: 855530821}
-  - {fileID: 17578117}
   - {fileID: 525981403}
   - {fileID: 648619397}
   - {fileID: 2119601531}

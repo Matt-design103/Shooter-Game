@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Shotty : Weapon
 {
+    public Camera playerCam;
     public int pellets = 8;
     public float spreadRange = 5f;
     float RandomGaussian(float mean = 0f, float stdDev = 1f)
@@ -16,7 +17,7 @@ public class Shotty : Weapon
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        playerCam = Camera.main;
     }
 
     // Update is called once per frame
@@ -28,8 +29,9 @@ public class Shotty : Weapon
 
     public override void Fire()
     {
-         Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, Quaternion.identity);
-       for (int i = 0; i < pellets; i++)
+        //Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, Quaternion.identity);
+        Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);
+        for (int i = 0; i < pellets; i++)
         {
             float spreadX = RandomGaussian(0f, spreadRange * 0.3f);
             float spreadY = RandomGaussian(0f, spreadRange * 0.3f);

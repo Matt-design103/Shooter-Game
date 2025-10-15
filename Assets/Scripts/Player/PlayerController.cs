@@ -173,7 +173,8 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
             canDash = false;
             StartCoroutine(DashCoolDown());
-
+            //currentHeat = currentHeat + heatPerShot;
+            //Debug.Log("Yo bro so hot " + currentHeat);
         }
     }
 

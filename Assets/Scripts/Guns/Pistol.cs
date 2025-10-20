@@ -5,6 +5,7 @@ public class Pistol : Weapon
 
     public float range = 100f;
     private Camera playerCam;
+    
 
 
     
@@ -13,6 +14,7 @@ public class Pistol : Weapon
     void Start()
     {
         playerCam = Camera.main;
+        heatManager = GetComponentInParent<HeatManager>();
     }
 
     // Update is called once per frame
@@ -23,15 +25,15 @@ public class Pistol : Weapon
 
     public override void Fire()
     {
-        currentHeat = currentHeat + heatPerShot;
-        Debug.Log("Yo bro so hot " + currentHeat);
+
+        heatManager.AddHeat(heatPerShot);
         RaycastHit hit;
-        
 
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range))
         {
-            Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);
-            Debug.Log("hit" + hit.collider.name);
+             Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);
+
+           
             GameObject target = hit.collider.gameObject;
             EnemyHealth enemy = target.GetComponent<EnemyHealth>();
 

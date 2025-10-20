@@ -46,7 +46,6 @@ public class EnemyAI : MonoBehaviour
         {
             agent.SetDestination(transform.position); // idle
         }
-        Debug.Log("In range? " + playerInActivationRange + " | Attack range? " + playerInAttackRange);
 
     }
 
@@ -71,12 +70,7 @@ public class EnemyAI : MonoBehaviour
             //  Fire bullet
             GameObject bullet = Instantiate(enemyBullet, bulletSpawnPos.position, bulletSpawnPos.rotation);
             
-            // Give bullet forward velocity if it has Rigidbody
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.linearVelocity = transform.forward * 20f; // adjust speed
-            }
+          
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

@@ -15,10 +15,9 @@ public abstract class Weapon : MonoBehaviour
     public Transform bulletSpawnPos;
     public Transform muzzleFlashSpawnPos;
     public ParticleSystem muzzleFlash;
+    public HeatManager heatManager;
     public float heatPerShot;
-    public float maxHeat;
-    public float currentHeat;
-    public bool overheating;
+  
 
 
     public float nextFireTime;
@@ -26,30 +25,19 @@ public abstract class Weapon : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHeat = 0f;
-        overheating = false;
-
         
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentHeat >= maxHeat)
-        {
-            overheating = true;
-        }
+     
     }
 
-    /*public virtual void Shoot()
+    public abstract void Fire();
+    
+    public void AddHeat(float amount)
     {
-        if (Time.time >= nextFireTime)
-        {
-            Fire();
-            nextFireTime = Time.time + fireRate;
-        }
-    }*/
-
-      public abstract void Fire();
+        heatManager.AddHeat(amount);
+    }
 }

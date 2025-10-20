@@ -23,8 +23,7 @@ public class Shotty : Weapon
     // Update is called once per frame
     void Update()
     {
-        currentHeat = currentHeat + heatPerShot;
-        Debug.Log("Yo bro so hot " + currentHeat);
+       
     }
 
     public override void Fire()

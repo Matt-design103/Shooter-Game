@@ -205,11 +205,15 @@ public class PlayerController : MonoBehaviour
 {
     // Check if we've reached the grapple point (or close enough)
     float distanceToTarget = Vector3.Distance(transform.position, grappleTarget);
-    if (distanceToTarget > 1f) // Within 1 unit of target
+        if (distanceToTarget > 3f) // Within 1 unit of target
+        {
+            Vector3 direction = (grappleTarget - transform.position).normalized;
+            // Move towards grapple point
+            characterController.Move(direction * grappleSpeed * Time.deltaTime);
+        }
+    else
     {
-         Vector3 direction = (grappleTarget - transform.position).normalized;
-    // Move towards grapple point
-    characterController.Move(direction * grappleSpeed * Time.deltaTime);
+        EndGrapple();
     }
     
     //jump off grapple

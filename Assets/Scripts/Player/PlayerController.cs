@@ -194,10 +194,20 @@ public class PlayerController : MonoBehaviour
     }
     
     public void HandleShooting()
-    {  if (Input.GetButtonDown("Fire1") && weaponManagement.CurrentWeapon != null)
+    {
+        var w = weaponManagement?.CurrentWeapon;
+        if (Input.GetButtonDown("Fire1") && w != null)
         {
-            weaponManagement.CurrentWeapon.Fire();
-            //get rotation of muzzle flash spawn pos
+            // immediate shot (for pistols/instant weapons)
+            w.Fire();
+            // begin sustained behavior (for charge/auto weapons that override StartSustainedFire)
+            w.StartSustainedFire();
+        }
+
+        if (Input.GetButtonUp("Fire1") && w != null)
+        {
+            // stop sustained behavior when button released
+            w.StopSustainedFire();
         }
     }
 

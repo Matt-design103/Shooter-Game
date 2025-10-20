@@ -22,4 +22,11 @@ public class PhysicalWeapon : Weapon
     {
         Instantiate(bulletPrefab, bulletSpawnPos.position, Quaternion.identity);
     }
+
+    public override void SustainedFire()
+    {
+        // Physical weapon does not have sustained fire
+    }
+    
+    
 }

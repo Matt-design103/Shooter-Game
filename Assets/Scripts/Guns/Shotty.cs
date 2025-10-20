@@ -40,6 +40,10 @@ public class Shotty : Weapon
             GameObject pellet = Instantiate(bulletPrefab, bulletSpawnPos.position, rotation);
 
         }
-
+    }
+    
+public override void SustainedFire()
+    {
+        // Shotgun does not have sustained fire
     }
 }

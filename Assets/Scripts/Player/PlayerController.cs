@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     //combat stuff
     public float maxHealth = 100f;
-    float currentHealth;
+    public float currentHealth;
     public float damage = 10f;
     public float range = 100f;
     public float health = 100f;
@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
             w.StartSustainedFire();
         }
 
-        if (Input.GetButtonUp("Fire1") && w != null)
+        if (Input.GetButtonUp("Fire1") && weaponManagement.CurrentWeapon != null)
         {
             // stop sustained behavior when button released
             w.StopSustainedFire();

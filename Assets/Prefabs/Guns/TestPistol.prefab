@@ -176,7 +176,7 @@ MonoBehaviour:
   damage: 10
   bulletPrefab: {fileID: 0}
   bulletSpawnPos: {fileID: 1097235026279203174}
-  chargedShotPrefab: {fileID: 5878951746486585089, guid: e80161b6d4420b64586e5859b5e73bd4, type: 3}
+  chargedShotPrefab: {fileID: 8616572341259412504, guid: d3e609180e28e874f949041ef76a0fb5, type: 3}
   muzzleFlashSpawnPos: {fileID: 1097235026279203174}
   muzzleFlash: {fileID: 3429829653987780078, guid: db88bed29789446468a11db5b2f059b8, type: 3}
   heatManager: {fileID: 0}

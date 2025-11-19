@@ -70,10 +70,11 @@ public class RangedEnemy : EnemyBase
         float speed = agent.velocity.magnitude;
         // Smooth the speed value
         float currentSpeed = animator.GetFloat("speed");
-        float smoothedSpeed = Mathf.Lerp(currentSpeed, speed, Time.deltaTime * 5f);
-        Debug.Log("Smoothed Speed: " + smoothedSpeed);
+        float smoothedSpeed = Mathf.Lerp(currentSpeed, speed, Time.deltaTime * 10f);
         animator.SetFloat("speed", smoothedSpeed);
-        animator.Update(0);
+        Debug.Log(animator.GetFloat("speed"));
+
+
     }
     }
     

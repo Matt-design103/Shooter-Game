@@ -13,43 +13,35 @@ public abstract class Weapon : MonoBehaviour
     public float damage;
     public GameObject bulletPrefab;
     public Transform bulletSpawnPos;
+    public GameObject chargedShotPrefab;
     public Transform muzzleFlashSpawnPos;
     public ParticleSystem muzzleFlash;
+    public HeatManager heatManager;
     public float heatPerShot;
-    public float maxHeat;
-    public float currentHeat;
-    public bool overheating;
-
+    public bool canFire;  
 
     public float nextFireTime;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // optional coroutine holder for derived classes
+    protected Coroutine sustainedCoroutine;
+
+    // Start/Update left as-is
+    void Start() { }
+    void Update() { }
+
+    public abstract void Fire();
+
+    // called when holding fire — keep abstract or noop depending on weapon
+    public abstract void SustainedFire();
+
+    // new lifecycle hooks for start/stop of sustained fire (override when needed)
+    public virtual void StartSustainedFire()
     {
-        currentHeat = 0f;
-        overheating = false;
-
-        
-
+        // default: do nothing. Derived classes that need coroutines should override.
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void StopSustainedFire()
     {
-        if (currentHeat >= maxHeat)
-        {
-            overheating = true;
-        }
+        // default: do nothing.
     }
-
-    /*public virtual void Shoot()
-    {
-        if (Time.time >= nextFireTime)
-        {
-            Fire();
-            nextFireTime = Time.time + fireRate;
-        }
-    }*/
-
-      public abstract void Fire();
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pellet : MonoBehaviour
+public class PhyscialBullet : MonoBehaviour
 {
     public float speed = 2000f;
     public int damage = 10;
@@ -14,13 +14,12 @@ public class Pellet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("hit" + collision.collider.name);
+   
         EnemyHealth enemy = collision.collider.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
             enemy.takeDamage(damage);
         }
-        Debug.Log("hit" + collision.collider.name);
         Destroy(gameObject);
     }
 }

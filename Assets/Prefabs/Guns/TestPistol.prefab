@@ -175,8 +175,12 @@ MonoBehaviour:
   fireMode: 0
   damage: 10
   bulletPrefab: {fileID: 0}
-  bulletSpawnPos: {fileID: 0}
+  bulletSpawnPos: {fileID: 1097235026279203174}
+  chargedShotPrefab: {fileID: 8616572341259412504, guid: d3e609180e28e874f949041ef76a0fb5, type: 3}
   muzzleFlashSpawnPos: {fileID: 1097235026279203174}
   muzzleFlash: {fileID: 3429829653987780078, guid: db88bed29789446468a11db5b2f059b8, type: 3}
+  heatManager: {fileID: 0}
+  heatPerShot: 1
+  canFire: 0
   nextFireTime: 0
   range: 10000

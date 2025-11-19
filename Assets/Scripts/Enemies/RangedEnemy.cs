@@ -73,6 +73,7 @@ public class RangedEnemy : EnemyBase
         float smoothedSpeed = Mathf.Lerp(currentSpeed, speed, Time.deltaTime * 5f);
         Debug.Log("Smoothed Speed: " + smoothedSpeed);
         animator.SetFloat("speed", smoothedSpeed);
+        animator.Update(0);
     }
     }
     

@@ -81,7 +81,7 @@ public abstract class EnemyBase : MonoBehaviour
     
     protected virtual void Activate()
     {
-        animator.SetBool("isAwake", true);
+        
         isActivated = true;
         if (agent != null)
         {

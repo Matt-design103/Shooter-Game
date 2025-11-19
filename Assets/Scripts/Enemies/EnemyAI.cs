@@ -16,8 +16,8 @@ public class EnemyAI : MonoBehaviour
     private bool alreadyAttacked;
 
     [Header("Ranges")]
-    public float activationRange = 15f;
-    public float attackRange = 7f;
+    public float activationRange;
+    public float attackRange;
 
     private bool playerInActivationRange, playerInAttackRange;
 

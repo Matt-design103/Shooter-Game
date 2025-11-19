@@ -28,7 +28,6 @@ public class ParryHItbox_Lmao : MonoBehaviour
         yield return new WaitForSeconds(delay);
         
         Destroy(gameObject);
-        Debug.Log("You did it bro");
         
     }
 }

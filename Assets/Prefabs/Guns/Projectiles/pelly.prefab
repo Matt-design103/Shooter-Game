@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2052802383355949395}
   - component: {fileID: 1803808114633566381}
   - component: {fileID: 1925031847682672298}
+  - component: {fileID: -7493043746576816668}
   m_Layer: 7
   m_Name: pelly
   m_TagString: PlayerProjectile
@@ -259,3 +260,16 @@ TrailRenderer:
   m_Autodestruct: 1
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-7493043746576816668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3888265136135524464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a554df215e7ec8d418dc8bd9c5039202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 3

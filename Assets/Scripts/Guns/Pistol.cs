@@ -27,15 +27,16 @@ public class Pistol : Weapon
     public override void Fire()
     {
         if (!canFire) return;
+         if (muzzleFlash != null && muzzleFlashSpawnPos != null)
+                Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);
+
 
         heatManager?.AddHeat(heatPerShot);
         RaycastHit hit;
 
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range))
         {
-            if (muzzleFlash != null && muzzleFlashSpawnPos != null)
-                Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);
-
+           
             GameObject target = hit.collider.gameObject;
             EnemyHealth enemy = target.GetComponent<EnemyHealth>();
 

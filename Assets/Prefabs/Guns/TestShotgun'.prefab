@@ -221,9 +221,14 @@ MonoBehaviour:
   damage: 0
   bulletPrefab: {fileID: 3888265136135524464, guid: 95f7cdbac791ead45b402bcdf4824f82, type: 3}
   bulletSpawnPos: {fileID: 7963963922899518214}
+  chargedShotPrefab: {fileID: 0}
   muzzleFlashSpawnPos: {fileID: 7963963922899518214}
-  muzzleFlash: {fileID: 3429829653987780078, guid: db88bed29789446468a11db5b2f059b8, type: 3}
+  muzzleFlash: {fileID: -6140058637718067864, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
+  heatManager: {fileID: 0}
+  heatPerShot: 0
+  canFire: 0
   nextFireTime: 0
+  playerCam: {fileID: 0}
   pellets: 8
   spreadRange: 5
 --- !u!4 &585696338180710014 stripped

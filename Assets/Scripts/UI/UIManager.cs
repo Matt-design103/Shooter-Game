@@ -5,7 +5,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject player;
     private PlayerController playerController;
-    public Image healthBar;
+    public Slider healthBar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +17,5 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = playerController.currentHealth / playerController.maxHealth;
     }
 }

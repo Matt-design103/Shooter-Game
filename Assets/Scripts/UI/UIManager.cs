@@ -17,5 +17,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.value = playerController.currentHealth/playerController.maxHealth;
     }
 }

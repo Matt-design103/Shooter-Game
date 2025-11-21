@@ -67,15 +67,20 @@ public class RangedEnemy : EnemyBase
     {
            if (agent != null && animator != null)
     {
-        float speed = agent.velocity.magnitude;
-        // Smooth the speed value
-        float currentSpeed = animator.GetFloat("speed");
-        float smoothedSpeed = Mathf.Lerp(currentSpeed, speed, Time.deltaTime * 10f);
-        animator.SetFloat("speed", smoothedSpeed);
-        Debug.Log(animator.GetFloat("speed"));
+        Vector3 getlocalVel = transform.InverseTransformDirection(agent.velocity);
 
+        float xSpeed = getlocalVel.x;
+        float zSpeed = getlocalVel.z;
 
-    }
+        float currXAnim = animator.GetFloat("xVelocity");
+        float currZAnim = animator.GetFloat("zVelocity"); 
+
+        float smoothedX = Mathf.Lerp(currXAnim, xSpeed, Time.deltaTime * 5f);
+        float smoothedZ = Mathf.Lerp(currZAnim, zSpeed, Time.deltaTime * 5f);
+        animator.SetFloat("xVelocity", smoothedX);
+        animator.SetFloat("zVelocity", smoothedZ);
+        
+  }
     }
     
     protected override void OnDrawGizmosSelected()

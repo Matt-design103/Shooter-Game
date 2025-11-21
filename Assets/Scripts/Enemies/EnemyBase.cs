@@ -97,20 +97,13 @@ public abstract class EnemyBase : MonoBehaviour
     // Virtual methods - can be overridden in derived classes for custom attacks
     protected virtual void PerformRangedAttack()
     {
+        
+        
+
         if (!alreadyAttacked && enemyBullet != null && bulletSpawnPos != null)
         {
-            // Random attack variation
-            int attackVariation = Random.Range(0, 2);
             
-            switch (attackVariation)
-            {
-                case 0:
-                    RangedAttack1();
-                    break;
-                case 1:
-                    RangedAttack2();
-                    break;
-            }
+            RangedAttack1();
             
          
         }
@@ -137,6 +130,7 @@ public abstract class EnemyBase : MonoBehaviour
             }
             
             alreadyAttacked = true;
+            animator.SetBool("isAttacking", true);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
@@ -144,6 +138,7 @@ public abstract class EnemyBase : MonoBehaviour
     // Individual attack methods - override these for custom attacks
     protected virtual void RangedAttack1()
     {
+        Debug.Log("Ranged Attack 1 executed");
         animator.SetTrigger("shoot");
         // Default: Single shot
 
@@ -153,29 +148,25 @@ public abstract class EnemyBase : MonoBehaviour
     {
          Instantiate(enemyBullet, bulletSpawnPos.position, bulletSpawnPos.rotation);
         alreadyAttacked = true;
+        animator.SetBool("isAttacking", true);
         // schedule reset after cooldown
         Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
     
     protected virtual void RangedAttack2()
     {
-        // Default: Burst fire
-        StartCoroutine(BurstFire(3, 0.1f));
-        alreadyAttacked = true;
-        // schedule reset after cooldown
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        animator.SetTrigger("shoot");
     }
     
     protected virtual void MeleeAttack1()
     {
         // spawn hitbox for now
-        Instantiate(meleeAttackHitbox, transform.position + transform.forward * (meleeAttackRange / 2), transform.rotation);
-        
+        animator.SetTrigger("melee");        
     }
     
     protected virtual void MeleeAttack2()
     {
-        Instantiate(meleeAttackHitbox, transform.position + transform.forward * (meleeAttackRange / 2), transform.rotation);
+        animator.SetTrigger("melee");
     }
     
     protected void MeleeAttackHit(int damage, float knockback)
@@ -242,6 +233,8 @@ public abstract class EnemyBase : MonoBehaviour
     // changed ResetAttack from IEnumerator to void so Invoke can call it
     protected virtual void ResetAttack()
     {
+        Debug.Log("Resetting attack");
+        animator.SetBool("isAttacking", false);
         alreadyAttacked = false;
     }
     

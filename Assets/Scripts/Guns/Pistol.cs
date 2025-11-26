@@ -13,9 +13,7 @@ public class Pistol : Weapon
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerCam = Camera.main;
-        heatManager = GetComponentInParent<HeatManager>();
-        canFire = true;
+       
     }
 
     // Update is called once per frame

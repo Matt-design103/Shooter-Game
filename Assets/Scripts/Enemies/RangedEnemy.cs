@@ -8,7 +8,6 @@ public class RangedEnemy : EnemyBase
     
     private Vector3 strafeDirection;
     private float strafeTimer;
-    private bool isCurrentlyMoving = false;
     
     protected override void ExecuteBehavior()
     {

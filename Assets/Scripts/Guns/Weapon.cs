@@ -26,7 +26,12 @@ public abstract class Weapon : MonoBehaviour
     protected Coroutine sustainedCoroutine;
 
     // Start/Update left as-is
-    void Start() { }
+    void Start()
+    {
+         playerCam = Camera.main;
+        heatManager = GetComponentInParent<HeatManager>();
+        canFire = true;
+    }
     void Update() { }
 
     public abstract void Fire();

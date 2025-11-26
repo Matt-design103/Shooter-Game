@@ -28,6 +28,8 @@ public class Shotty : Weapon
 
     public override void Fire()
     {
+        heatManager?.AddHeat(heatPerShot);
+
         //Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, Quaternion.identity);
         Instantiate(muzzleFlash, muzzleFlashSpawnPos.position, playerCam.transform.rotation);
         for (int i = 0; i < pellets; i++)

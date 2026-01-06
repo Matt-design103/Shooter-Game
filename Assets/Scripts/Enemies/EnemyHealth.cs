@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public float spawnCost;
     public float health = 100f;
 
     void Start()

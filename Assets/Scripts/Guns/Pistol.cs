@@ -5,7 +5,6 @@ public class Pistol : Weapon
 {
 
     public float range = 100f;
-    private Camera playerCam;
 
     // coroutine reference for charging
     private Coroutine chargeCoroutine;
@@ -13,7 +12,9 @@ public class Pistol : Weapon
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        playerCam = Camera.main;
+        heatManager = GetComponentInParent<HeatManager>();
+        canFire = true;
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public abstract class Weapon : MonoBehaviour
     public Transform muzzleFlashSpawnPos;
     public ParticleSystem muzzleFlash;
     public HeatManager heatManager;
+    public Camera playerCam;
     public float heatPerShot;
     public bool canFire;  
 
@@ -28,9 +29,7 @@ public abstract class Weapon : MonoBehaviour
     // Start/Update left as-is
     void Start()
     {
-         playerCam = Camera.main;
-        heatManager = GetComponentInParent<HeatManager>();
-        canFire = true;
+        
     }
     void Update() { }
 

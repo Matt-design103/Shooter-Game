@@ -225,10 +225,10 @@ MonoBehaviour:
   muzzleFlashSpawnPos: {fileID: 7963963922899518214}
   muzzleFlash: {fileID: -6140058637718067864, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
   heatManager: {fileID: 0}
-  heatPerShot: 0
+  playerCam: {fileID: 0}
+  heatPerShot: 3
   canFire: 0
   nextFireTime: 0
-  playerCam: {fileID: 0}
   pellets: 8
   spreadRange: 5
 --- !u!4 &585696338180710014 stripped

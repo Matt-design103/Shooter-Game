@@ -1,0 +1,217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SoldierBoiShootMask
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Palm.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Index.1.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Index.1.L/Index.2.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Index.1.L/Index.2.L/Index.3.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Index.1.L/Index.2.L/Index.3.L/Index.3.L_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Middle.1.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Middle.1.L/Middle.2.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Middle.1.L/Middle.2.L/Middle.3.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Middle.1.L/Middle.2.L/Middle.3.L/Middle.3.L_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Pinky.1.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Pinky.1.L/Pinky.2.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Pinky.1.L/Pinky.2.L/Pinky.3.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Pinky.1.L/Pinky.2.L/Pinky.3.L/Pinky.3.L_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Ring.1.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Ring.1.L/Ring.2.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Ring.1.L/Ring.2.L/Ring.3.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Ring.1.L/Ring.2.L/Ring.3.L/Ring.3.L_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Thumd.1.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Thumd.1.L/Thumd.2.L
+    m_Weight: 1
+  - m_Path: Armature/Palm.L/Thumd.1.L/Thumd.2.L/Thumd.2.L_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Index.1.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Index.1.R/Index.2.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Index.1.R/Index.2.R/Index.3.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Index.1.R/Index.2.R/Index.3.R/Index.3.R_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Middle.1.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Middle.1.R/Middle.2.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Middle.1.R/Middle.2.R/Middle.3.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Middle.1.R/Middle.2.R/Middle.3.R/Middle.3.R_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Pinky.1.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Pinky.1.R/Pinky.2.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Pinky.1.R/Pinky.2.R/Pinky.3.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Pinky.1.R/Pinky.2.R/Pinky.3.R/Pinky.3.R_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Ring.1.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Ring.1.R/Ring.2.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Ring.1.R/Ring.2.R/Ring.3.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Ring.1.R/Ring.2.R/Ring.3.R/Ring.3.R_end
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Thumd.1.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Thumd.1.R/Thumd.2.R
+    m_Weight: 1
+  - m_Path: Armature/Palm.R/Thumd.1.R/Thumd.2.R/Thumd.2.R_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Feet.L
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Feet.L/Feet.L_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Feet.R
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Feet.R/Feet.R_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Thigh.L.001
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Thigh.L.001/Thigh.L.001_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Thigh.R.001
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Thigh.R.001/Thigh.R.001_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Gun
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Gun/Gun.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Gun/Gun.001/Gun.001_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Gun/Mag
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Gun/Mag/Mag_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Pelvis.L.001
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Pelvis.L.001/Pelvis.L.001_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Thigh.L
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Thigh.L/Calf.L
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Thigh.L/Calf.L/DLeg.L
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Thigh.L/Calf.L/DLeg.L/Heel.L
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.L/Thigh.L/Calf.L/DLeg.L/Heel.L/Heel.L_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Pelvis.R.001
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Pelvis.R.001/Pelvis.R.001_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Thigh.R
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Thigh.R/Calf.R
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Thigh.R/Calf.R/Dleg.R
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Thigh.R/Calf.R/Dleg.R/Heel.R
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist/Pelvis.R/Thigh.R/Calf.R/Dleg.R/Heel.R/Heel.R_end
+    m_Weight: 0
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Elbow.L.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Elbow.L.001/Elbow.L.001_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Elbow.R.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Elbow.R.001/Elbow.R.001_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Forearm.L.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Forearm.L.001/Forearm.L.001_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Forearm.R.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Forearm.R.001/Forearm.R.001_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Neck
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Neck/Head/Fan.L
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Neck/Head/Fan.L/Fan.L_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Neck/Head/Fan.R
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Neck/Head/Fan.R/Fan.R_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Shoulder.L
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Shoulder.L/Shoulder.L_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Shoulder.R
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Shoulder.R/Shoulder.R_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.L
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.L/Darm.L
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.L/Darm.L/Palm.L.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.L/Darm.L/Palm.L.001/Palm.L.001_end
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.R
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.R/Darm.R
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.R/Darm.R/Palm.R.001
+    m_Weight: 1
+  - m_Path: Armature/Waist.003/Waist.002/Waist.001/Torso/Uarm.R/Darm.R/Palm.R.001/Palm.R.001_end
+    m_Weight: 1
+  - m_Path: Grunt
+    m_Weight: 0

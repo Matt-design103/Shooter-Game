@@ -23,8 +23,13 @@ public class PlayerController : MonoBehaviour
     public float cameraHeight = 2f;
     public float cameraSensitivity = 2.0f;
     public float cameraVerticalLimit = 80f;
+    
     private float cameraYaw = 0f;
     private float cameraPitch = 20f;
+    private bool isThirdPerson = true;
+    public Transform camFirstPersonPos;
+    public GameObject firstPersonModel;
+    public GameObject thirdPersonModel;
 
     //player rotation
     public float rotationSpeed = 10f;
@@ -84,6 +89,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+            Vector3 angles = playerCamera.transform.eulerAngles;
+    cameraYaw = angles.y;
+    cameraPitch = angles.x;
+
+     UpdateModelVisibility();
+
         characterController = GetComponent<CharacterController>();
         heatManager = GetComponent<HeatManager>();
         weaponManagement = GetComponent<WeaponManagement>();
@@ -135,7 +146,26 @@ public class PlayerController : MonoBehaviour
 
     private void HandleCamera()
     {
-        // Get mouse input
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+        // Toggle between first and third person camera
+        isThirdPerson = !isThirdPerson;
+        UpdateModelVisibility();
+        }
+        // Always update the active camera mode
+        if (isThirdPerson)
+        {
+        HandleThirdPersonCamera();
+        }
+        else
+        {
+        HandleFirstPersonCamera();
+        }
+    }
+
+    private void HandleThirdPersonCamera()
+    {
+      // Get mouse input
         cameraYaw += Input.GetAxis("Mouse X") * cameraSensitivity;
         cameraPitch -= Input.GetAxis("Mouse Y") * cameraSensitivity;
         cameraPitch = Mathf.Clamp(cameraPitch, -cameraVerticalLimit, cameraVerticalLimit);
@@ -146,6 +176,33 @@ public class PlayerController : MonoBehaviour
         
         playerCamera.transform.position = cameraTarget.position + offset;
         playerCamera.transform.LookAt(cameraTarget.position);
+    }
+    
+    private void HandleFirstPersonCamera()
+    {
+         // Get mouse input
+    cameraYaw += Input.GetAxis("Mouse X") * cameraSensitivity;
+    cameraPitch -= Input.GetAxis("Mouse Y") * cameraSensitivity;
+    cameraPitch = Mathf.Clamp(cameraPitch, -cameraVerticalLimit, cameraVerticalLimit);
+
+    // Position camera at player's eye level (or head position)
+    playerCamera.transform.position = cameraTarget.position + Vector3.up * cameraHeight;
+    
+    // Apply rotation directly to camera
+    playerCamera.transform.rotation = Quaternion.Euler(cameraPitch, cameraYaw, 0);
+    }
+
+    private void UpdateModelVisibility()
+    {
+        if (firstPersonModel != null)
+        {
+        firstPersonModel.SetActive(!isThirdPerson);
+        }
+    
+        if (thirdPersonModel != null)
+        {
+        thirdPersonModel.SetActive(isThirdPerson);
+        }
     }
 
     private void HandleGrappleInput()

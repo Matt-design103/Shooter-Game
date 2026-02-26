@@ -5,7 +5,6 @@ public class Pistol : Weapon
 {
 
     public float range = 100f;
-    private Camera playerCam;
 
     // coroutine reference for charging
     private Coroutine chargeCoroutine;

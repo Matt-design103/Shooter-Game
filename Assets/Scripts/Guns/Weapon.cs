@@ -17,6 +17,7 @@ public abstract class Weapon : MonoBehaviour
     public Transform muzzleFlashSpawnPos;
     public ParticleSystem muzzleFlash;
     public HeatManager heatManager;
+    public Camera playerCam;
     public float heatPerShot;
     public bool canFire;  
 
@@ -26,7 +27,10 @@ public abstract class Weapon : MonoBehaviour
     protected Coroutine sustainedCoroutine;
 
     // Start/Update left as-is
-    void Start() { }
+    void Start()
+    {
+        
+    }
     void Update() { }
 
     public abstract void Fire();

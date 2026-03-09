@@ -62,10 +62,10 @@ public class PlayerController : MonoBehaviour
     public float grappleRange = 100f;
     public float grappleCooldown = 1f;
     public float grappleAccelerationFactor = 10f;
-    public float maxGrappleSpeed = 30f;
+    public float maxGrappleSpeed = 30000f;
     public float grappleCancelBoost = 5f;
     private float currentGrappleSpeed = 0f;
-    private float baseGrappleSpeed = 20f;
+    public float baseGrappleSpeed = 2090f;
 
     //state stuff
     public enum PlayerState
@@ -212,6 +212,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
             {
+                if (!hit.collider.CompareTag("Player"));
                 grappleTarget = hit.point;
                 StartGrapple();
             }
